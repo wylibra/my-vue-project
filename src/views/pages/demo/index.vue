@@ -1,5 +1,5 @@
 <template>
   <div>
-    孩子1
+    <router-view></router-view>
   </div>
 </template>

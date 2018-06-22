@@ -16,23 +16,13 @@ export default new Router({
       component: require('@/views/pages/Home/index.vue').default
     },
     {
-      path: '/about',
-      name: 'about',
-      component: require('@/views/pages/About/index.vue').default
-    },
-    {
-      path: '/father',
-      component: require('@/views/pages/father/index.vue').default,
+      path: '/demo',
+      component: require('@/views/pages/demo/index.vue').default,
       children: [
         {
-          path: 'child1',
-          name: 'child1',
-          component: () => import('@/views/pages/father/child1.vue')
-        },
-        {
-          path: 'child2',
-          name: 'child2',
-          component: () => import('@/views/pages/father/child2.vue')
+          path: 'demoDebounce',
+          name: 'demoDebounce',
+          component: () => import('@/views/pages/demo/demoDebounce/index.vue')
         }
       ]
     }
