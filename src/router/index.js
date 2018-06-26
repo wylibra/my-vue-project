@@ -3,30 +3,36 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const routes = [
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: require('@/views/pages/Home/index.vue').default
+  },
+  {
+    path: '/demo',
+    component: require('@/views/pages/demo/index.vue').default,
+    children: [
+      {
+        path: 'demoDebounce',
+        name: 'demoDebounce',
+        component: () => import('@/views/pages/demo/demoDebounce/index.vue')
+      }, {
+        path: 'demoCanvas',
+        name: 'demoCanvas',
+        component: () => import('@/views/pages/demo/demoCanvas/index.vue')
+      }
+    ]
+  }
+]
+
 export default new Router({
   mode: 'hash',
-  routes: [
-    {
-      path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: require('@/views/pages/Home/index.vue').default
-    },
-    {
-      path: '/demo',
-      component: require('@/views/pages/demo/index.vue').default,
-      children: [
-        {
-          path: 'demoDebounce',
-          name: 'demoDebounce',
-          component: () => import('@/views/pages/demo/demoDebounce/index.vue')
-        }
-      ]
-    }
-  ]
+  routes
 })
 
 // mode: 'hash', 默认使用“hash”,所以设置与否浏览器的URL显示像这样(http://localhost:8000/#/firsts/first ),
