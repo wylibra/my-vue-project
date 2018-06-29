@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h3 @click="childClick">{{ msg }}</h3>
+    <div>过滤器使用(千分符)：{{val | localeString}}</div>
     <div v-for="(user, index) in users" :key="index">
       {{user}}
     </div>
@@ -19,20 +20,21 @@ export default {
   },
   data () {
     return {
-
+      val: '123450670'
     }
   },
   computed: {
     ...mapState('user', ['users'])
   },
   methods: {
-    ...mapActions('user', ['getUsers']),
-    childClick () {
+    ...mapActions('user', ['getUsers']), // 将 `this.getUsers()` 映射为 `this.$store.dispatch('user/getUsers')`
+    async childClick () {
+      await this.getUsers()
       this.$emit('poverMsg', 'child‘s content.')
     }
   },
   created () {
-    this.getUsers()
+
   }
 }
 </script>
