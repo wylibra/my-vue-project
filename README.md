@@ -1,8 +1,18 @@
 
-## my-vue-project
+# my-vue-project
+> A Vue.js project 
 
-## 启动
 
-```shell
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
 npm run serve
+
+# build for production with minification
+npm run build
 ```
+
