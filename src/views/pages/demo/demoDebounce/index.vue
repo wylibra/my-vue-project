@@ -154,7 +154,8 @@ export default {
     height: 80px;
     width: 150px;
     border: 1px solid pink;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin-bottom: 20px;
   }
 }
