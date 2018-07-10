@@ -5,7 +5,7 @@ import store from '@/store'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import './views/styles/index.less'
+import './styles/index.less'
 import * as myFilters from '@/filters'
 
 // 全局注入 filters
