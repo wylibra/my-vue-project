@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello-container">
     <h3 @click="childClick">{{ msg }}</h3>
     <div>过滤器使用(千分符)：{{val | localeString}}</div>
     <div v-for="(user, index) in users" :key="index">
@@ -16,7 +16,12 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: {
+      type: String,
+      default: () => {
+        return ''
+      }
+    }
   },
   data () {
     return {

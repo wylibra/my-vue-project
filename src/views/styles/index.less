@@ -1,3 +1,13 @@
 @import './common.less';
 @import './rewrite.less';
 @import './varieties.less';
+@import './pages/hello.less'; // 引入某个页面的样式
+
+.main() {
+  // 公共容器的样式
+  .main-container {
+
+  }
+  .page_hello(); // 具体页面的样式
+}
+.main();// 调用主入口函数

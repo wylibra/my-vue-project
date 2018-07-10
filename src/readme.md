@@ -12,6 +12,8 @@
     对node版本的以及npm版本的要求
   6、browserslist
     浏览器要求，vue项目不支持ie8，因为ie8是es3，尚没有Object.defineProperty属性
+
+    
 ## 启动
 
 ```shell
